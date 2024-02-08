@@ -189,7 +189,7 @@ filter_read_on_blacklist =
     ### Blacklist of hg19 is available as default without giving files
     if(is.null(blacklist_files) & genome=="hg38"){
       blacklist_files <-
-        c(system.file("extdata", "k100_minus_exclusion_lists.mappable_regions.hg38.bed",
+        c(system.file("extdata", "ENCFF220FIN.bed.gz",
                       package = "cfdnakit"),
           system.file("extdata","hg38_centromere.tsv.gz",
                       package = "cfdnakit")
