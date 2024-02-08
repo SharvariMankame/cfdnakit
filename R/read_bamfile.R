@@ -185,9 +185,9 @@ UCSC2GRChSampleBam = function (sample.bam) {
 #' @return SampleBam after filtering out read on balck list regions
 #'
 filter_read_on_blacklist =
-  function(sample_bin, blacklist_files=NULL , genome="hg19"){
+  function(sample_bin, blacklist_files=NULL , genome="hg38"){
     ### Blacklist of hg19 is available as default without giving files
-    if(is.null(blacklist_files) & genome=="hg19"){
+    if(is.null(blacklist_files) & genome=="hg38"){
       blacklist_files <-
         c(system.file("extdata", "k100_minus_exclusion_lists.mappable_regions.hg38.bed",
                       package = "cfdnakit"),
