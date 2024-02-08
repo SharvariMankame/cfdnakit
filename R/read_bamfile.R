@@ -191,7 +191,7 @@ filter_read_on_blacklist =
       blacklist_files <-
         c(system.file("extdata", "k100_minus_exclusion_lists.mappable_regions.hg38.bed",
                       package = "cfdnakit"),
-          system.file("extdata","hg38_centromeres.bed",
+          system.file("extdata","hg38_centromere.tsv.gz",
                       package = "cfdnakit")
           )
       # message("ls : ", list.files("/home/puranach/R/x86_64-pc-linux-gnu-library/4.3/cfdnakit/extdata"))
