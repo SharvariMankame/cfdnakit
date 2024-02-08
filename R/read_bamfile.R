@@ -18,7 +18,7 @@
 #' ### read bam file with default params (hg19, 1000K binsize)
 #' sample.bam <-read_bamfile(fl, apply_blacklist=FALSE)
 read_bamfile = function(bamfile_path, binsize=1000, blacklist_files=NULL ,
-                         genome="hg19" ,target_bedfile=NULL,
+                         genome="hg38" ,target_bedfile=NULL,
                          min_mapq=20, apply_blacklist= TRUE){
   if(!file.exists(bamfile_path)){
     stop("The bamfile doesn't exist. Please check if the path to bamfile is valid.")
@@ -189,13 +189,13 @@ filter_read_on_blacklist =
     ### Blacklist of hg19 is available as default without giving files
     if(is.null(blacklist_files) & genome=="hg19"){
       blacklist_files <-
-        c(system.file("extdata", "wgEncodeDacMapabilityConsensusExcludable.bed_GRCh37.gz",
+        c(system.file("extdata", "k100_minus_exclusion_lists.mappable_regions.hg38.bed",
                       package = "cfdnakit"),
-          system.file("extdata","hg19_centromere.tsv.gz",
+          system.file("extdata","hg38_centromeres.bed",
                       package = "cfdnakit")
           )
       # message("ls : ", list.files("/home/puranach/R/x86_64-pc-linux-gnu-library/4.3/cfdnakit/extdata"))
-    } else if(is.null(blacklist_files) & genome!="hg19") {
+    } else if(is.null(blacklist_files) & genome!="hg38") {
       ### When no blacklist files is not provided, return the whole input.
       message("Blacklist files were not given.")
       return(sample_bin)
